@@ -1,0 +1,290 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: Calibri, fantasy;
+	background-color: aliceblue;
+}
+
+div{
+	box-sizing: border-box;
+}
+
+header{
+	margin-top: 5px;
+	width: 100%;
+	height: 5%;
+	background: teal;
+	align-items: center;
+	border-radius: 25px;
+}
+
+section{
+	margin: 0;
+	padding: 0;
+	min-height: calc(100vh - 270px);
+}
+
+.name-shop{
+	text-align: center;
+	margin-left: 2%;
+	font-size: 50px;
+	font-family: Optien;
+	color: white;
+}
+
+/*div.search{
+	width: 25%;
+	font-size: 20px;
+	height: 30px;
+	margin-left: 60%;
+	background-color: mintcream ;
+}
+.find{
+	padding-left: 1%;
+	padding-right: 1%;
+	height: 20px;
+}*/
+
+.button-basket{
+	box-sizing: border-box;
+	border-radius: 25px;
+	border: 2px solid dimgrey;
+	font-size: 30px;
+	padding-right: 40px;
+	padding-left: 30px;
+	margin-top: 5%;
+	margin-left: 85%;
+	background-color: teal;
+	text-decoration: none;
+	color: black;
+}
+
+.text-count-products{
+	display: inline;
+	font-size: 20px;
+}
+
+.count-products{
+	display: inline;
+	font-size: 20px;
+}
+
+.text-category{
+	/*margin-top: 10px;*/
+	margin-left: 3%;
+	text-align: left;
+	font-size: 40px;
+}
+
+.upper-container{
+	margin-top: 0.05%;
+	width: 100%;
+}
+
+.categories{
+	margin-top: 30px;
+}
+
+.category-bottom{
+	margin-top: 4%;
+	float: left;
+	display:inline;
+	margin-left: 300px;
+	width: 250px;
+	border: 2px solid dimgrey;
+	border-radius: 25px;
+	background-color: teal;
+	text-align: center;
+	vertical-align: bottom;
+
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.add-bottom{
+	margin-top: 4%;
+	float: left;
+	display:inline;
+
+	width: 250px;
+	border: 2px solid dimgrey;
+	border-radius: 25px;
+	background-color: teal;
+	text-align: center;
+	box-sizing: border-box;
+	vertical-align: bottom;
+
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+
+/*.categories li{
+	float: left;
+	display: inline;
+	margin-left: 350px;
+	width: 250px;
+	border: 2px solid dimgrey;
+	border-radius: 25px;
+	background-color: teal;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+.categories li a {
+	margin-top: 1%;
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+}*/
+
+/*.menu-elem{
+	padding-bottom: 5px;
+	padding-top: 5px;
+}*/
+
+/*.lower-container{
+	width: 100%;
+	!*margin-top: 3%;*!
+	margin: 0 auto;
+	!*min-height: calc(10vh - 250px);*!
+	height: auto;
+
+	background-color: palegoldenrod;
+	display: inline-block;
+}*/
+
+.lower-container-products{
+	background-color: aliceblue;
+	float: left;
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-radius: 20px;
+	border: 2px solid dimgrey;
+	width: 40%;
+}
+
+/*.lower-container-filters{
+	background-color: powderblue;
+	float: left;
+	width: 20%;
+	height: auto;
+}*/
+
+.text-center{
+	text-align: center;
+	font-size: 30px;
+}
+
+.products{
+	/*margin-top: 20px;*/
+}
+
+.products li{
+	text-decoration: none;
+	list-style-type: none;
+}
+
+.product{
+
+	font-size: 30px;
+	margin-top: 50px;
+	width: calc(80vw - 800px);
+	height: 200px;
+	border-radius: 20px;
+	border: 1px solid dimgrey;
+	background-color: teal;
+	text-align: center;
+}
+
+.buy{
+	/*margin-top: 1px;*/
+	/*display: inline-block;*/
+	margin-left: 60%;
+	width: 50px;
+	height: 40px;
+	border: 2px solid dimgrey;
+	border-radius: 25px;
+	background-color: gray;
+	text-align: center;
+	vertical-align: bottom;
+	box-sizing: border-box;
+
+	font-size: 10px;
+	text-decoration: none;
+	color: white;
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+
+
+
+.form{
+	position: relative;
+	top: 50%;
+	left: 89%;
+	transform: translate(-50%,-50%);
+	transition: all 1s;
+	width: 50px;
+	height: 50px;
+	background: mintcream;
+	box-sizing: border-box;
+	border-radius: 25px;
+	border: 4px solid white;
+	padding: 5px;
+}
+
+.input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;;
+	height: 42.5px;
+	line-height: 30px;
+	outline: 0;
+	border: 0;
+	display: none;
+	font-size: 1em;
+	border-radius: 20px;
+	padding: 0 20px;
+}
+
+.fa{
+	box-sizing: border-box;
+	padding: 10px;
+	width: 42.5px;
+	height: 42.5px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	color: #07051a;
+	text-align: center;
+	font-size: 1.2em;
+	transition: all 1s;
+}
+
+.form:hover{
+	width: 200px;
+	cursor: pointer;
+}
+
+.form:hover input{
+	display: block;
+}
+
+.form:hover .fa{
+	background: #07051a;
+	color: white;
+}

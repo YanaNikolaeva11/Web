@@ -1,0 +1,142 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: Calibri, fantasy;
+	background-color: aliceblue;
+}
+
+header{
+	width: 100%;
+	height: 5%;
+	background: teal;
+	align-items: center;
+	border-radius: 25px;
+}
+
+section{
+	margin-top: 10px;
+}
+
+.basket-name{
+	text-align: center;
+	font-size: 30px;
+	font-family: Optien;
+}
+/*
+
+.line{
+	width: 100%;
+	height: 1px;
+	background-color: black;
+	margin-top: 20px;
+}
+*/
+
+/*.container{
+	width: 100%;
+	margin: 0 auto;
+	min-height: calc(100vh - 70px);
+	!*height: auto*!
+	display: inline-block;
+}*/
+
+.list-text{
+	margin-left: 25.5%;
+	font-size: 30px;
+}
+
+.container-products{
+	margin-left: 20px;
+	background-color: #edeef0;
+	float: left;
+	border: 1px solid grey;
+	border-radius: 25px;
+	width: 70%;
+	height: 500px;
+}
+
+.products li{
+	text-decoration: none;
+	list-style-type: none;
+}
+
+.container-product{
+	margin-top: 20px;
+	/*background-color: yellow;*/
+	width: inherit;
+	margin-right: 50px;
+	height: 60px;
+}
+
+.product{
+	font-size: 25px;
+	float: left;
+	display: inline-block;
+	width: 800px;
+	height: 40px;
+	border: 1px solid grey;
+	border-radius: 20px;
+	background-color: aliceblue;
+	text-align: center;
+}
+
+.delete{
+	float: left;
+	width: 100px;
+	height: 33px;
+	margin-left: 18px;
+	box-sizing: border-box;
+	border: 1px solid dimgrey;
+	border-radius: 20px;
+	font-size: 17px;
+	background-color: grey;
+	text-decoration: none;
+	color: firebrick;
+	text-align: center;
+}
+
+.container-info{
+	margin-left: 50px;
+	background-color: #edeef0;
+	float: left;
+	border: 1px solid grey;
+	border-radius: 25px;
+	width: 20%;
+	height: 180px;
+}
+
+
+.info-total-order{
+	margin-top: 10px;
+	width: 300px;
+	margin-left: calc(10vw - 150px);
+	height: 100px;
+	background-color: #edeef0;
+}
+
+.text-total{
+	text-align: center;
+	font-size: 25px;
+}
+
+.price-total{
+	text-align: center;
+	font-size: 25px;
+	margin-top: 25px;
+}
+
+.button-confirm{
+	float: left;
+	margin-left: 130px;
+	margin-top: 20px;
+	box-sizing: border-box;
+	border: 2px solid dimgrey;
+	border-radius: 20px;
+	font-size: 25px;
+	padding-right: 40px;
+	padding-left: 40px;
+	background-color: teal;
+	text-decoration: none;
+	color: white;
+}
+

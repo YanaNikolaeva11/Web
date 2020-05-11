@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../signin.css">
+    <title>SignIn</title>
+</head>
+<body>
+<header class="text">TechWorld</header>
+<form method="post"><div class="container">
+    <input type="text" name="name" class="login" placeholder="Name" required checked/>
+    <input type="text" name="surname" class="login" placeholder="Surname" required checked/>
+    <input type="text" name="patronymic" class="login" placeholder="Patronymic" required checked/>
+    <input type="password" name="password" class="login" placeholder="password" required />
+    <input type="radio" name="role" value="adm" class="role" required checked/> Admin<Br>
+    <input type="radio" name="role" value="user" class="role" required checked/> User<Br>
+    <input type="radio" name="gender" value="women" class="gender" required /> Female<Br>
+    <input type="radio" name="gender" value="man" class="gender" required /> Male<Br>
+    <!--предполагается что кнопка входа будет переводить на корзину, с возможностью покупки-->
+    <p><input type="button" href="basket.html" class="signin" value="Sign In"></p>
+    <!--<p><a href="basket.html" class="signin" >Sign in</a></p>-->
+
+    <!--предполагается что кнопка регистрации будет переводить на каталог-->
+    <p><input type="button" href="user.html" class="registration" value="Registration"></p>
+    <!--<p><a href="user.html" class="registration" >Registration</a></p>-->
+</div></form>
+
+<!-- пердполагаю, что просто просматривать наш католог может кто угодно и кто угодно может кидать
+продукты в корзину, и смотреть сколько по сумме выходит у них заказ, но кнопка купить активна только для тех, кто
+вошел в учетную запись или зарегался естественно-->
+
+</body>
+</html>
