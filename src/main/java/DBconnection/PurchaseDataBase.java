@@ -61,14 +61,14 @@ public class PurchaseDataBase {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
-                String sql = "SELECT * FROM purchase WHERE idCustomer = ?";
+                String sql = "SELECT MAX(idPurchase) FROM purchase WHERE idCustomer = ?";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setInt(1, id);
                     ResultSet resultSet = preparedStatement.executeQuery();
                     if(resultSet.next()){
                         int idPurchase = resultSet.getInt(1);
-                        int idCustomer = resultSet.getInt(2);
-                        purchase = new Purchase(idPurchase, idCustomer);
+                        /*int idCustomer = resultSet.getInt(2);*/
+                        purchase = new Purchase(idPurchase, 0);
                     }
                 }
             }
