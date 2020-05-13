@@ -102,12 +102,12 @@ public class SpecificationsDataBase {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
-                String sql = "UPDATE specifications SET property = ?, propertyValue = ?" +
-                        " WHERE idProduct = ?";
+                String sql = "UPDATE specifications SET  propertyValue = ?" +
+                        " WHERE idProduct = ? AND property LIKE ?";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
-                    preparedStatement.setInt(3, specification.getIdProduct());
-                    preparedStatement.setString(1, specification.getProperty());
-                    preparedStatement.setString(2, specification.getPropertyValue());
+                    preparedStatement.setInt(2, specification.getIdProduct());
+                    preparedStatement.setString(3, specification.getProperty());
+                    preparedStatement.setString(1, specification.getPropertyValue());
                     return  preparedStatement.executeUpdate();
                 }
             }

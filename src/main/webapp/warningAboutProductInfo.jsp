@@ -18,7 +18,7 @@
 </p>--%>
 
 
-<form method="post" action='<c:url value="/updateInfo" />'>
+<form method="post" action='<c:url value="/updateInfo" />' style="margin-left: 48%">
     <input type="hidden" name="idProduct" value="${product}">
     <input type="hidden" name="idCategory" value="${category}">
     <button type="submit" class="btn btn-success">Success</button>
