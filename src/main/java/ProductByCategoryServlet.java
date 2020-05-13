@@ -19,7 +19,7 @@ public class ProductByCategoryServlet extends HttpServlet {
         String nameCategory= request.getParameter("categoryName");
         ArrayList<Product> products = ProductDataBase.findByCategory(nameCategory);
 
-        request.setAttribute("products", products);
+        request.setAttribute("categories", products);
         getServletContext().getRequestDispatcher("/user.jsp").forward(request, response);
     }
 }

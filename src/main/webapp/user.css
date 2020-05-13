@@ -82,7 +82,7 @@ section{
 }
 
 .categories{
-	margin-top: 30px;
+	margin-top: 80px;
 }
 
 .category-bottom{
@@ -197,9 +197,9 @@ section{
 .product{
 
 	font-size: 30px;
-	margin-top: 50px;
+	margin-top: 80px;
 	width: calc(80vw - 800px);
-	height: 200px;
+	height: 300px;
 	border-radius: 20px;
 	border: 1px solid dimgrey;
 	background-color: teal;

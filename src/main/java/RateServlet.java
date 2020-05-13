@@ -22,6 +22,11 @@ public class RateServlet extends HttpServlet {
         for (Object var:products) {
             System.out.println(var);
         }
+
+        String nameCategory= request.getParameter("categoryName");
+        ArrayList<Product> category = ProductDataBase.findByCategory(nameCategory);
+
+        request.setAttribute("categories", category);
         request.setAttribute("rating", avgRate);
         request.setAttribute("products", products);
         getServletContext().getRequestDispatcher("/user.jsp").forward(request, response);
