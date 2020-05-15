@@ -183,9 +183,9 @@
 		<div class="row">
 			<div class="col-3">
 				<div class="categories">
-					<c:forEach var="categories" items="${categories}">
+					<c:forEach var="category" items="${categories}">
 						<form method="get" action='<c:url value="/productByCategory" />'>
-							<a><input type="submit" name="categoryName" value="${categories.nameCategory}" class="category-bottom"></a>
+							<a><input type="submit" name="categoryName" value="${category.nameCategory}" class="category-bottom"></a>
 						</form>
 					</c:forEach>
 				</div>
@@ -202,7 +202,7 @@
 									</p>
 								</form>
 								<p>Price: ${product.price}</p>
-								<p>Средняя оценка: ${rating}</p>
+								<p>Средняя оценка: ${product.rating}</p>
 								<form method="post" action='<c:url value="/rate" />'>
 									<input type="hidden" name="id" value="${product.idProduct}">
 									<p>Оцените товар:</p><input title="Your rate: " type="text" name="rate">

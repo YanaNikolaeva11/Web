@@ -155,6 +155,34 @@ public class ProductDataBase {
         }
         return 0;
     }
+
+
+
+    public static int updateRating(int id, double rating) {
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection(url, username, password)){
+                String sql = "UPDATE product SET rating = ?" +
+                        " WHERE idProduct = ?";
+                try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+                    preparedStatement.setDouble(1, rating);
+                    preparedStatement.setInt(2, id);
+                    return  preparedStatement.executeUpdate();
+                }
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        return 0;
+    }
+
+
+
+
+
+
+
     public static int delete(int id) {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();

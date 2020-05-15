@@ -1,5 +1,7 @@
+import DBconnection.CategoryDataBase;
 import DBconnection.ProductDataBase;
 import DBconnection.Rate;
+import Data.Category;
 import Data.Product;
 
 import javax.servlet.ServletException;
@@ -16,18 +18,14 @@ public class RateServlet extends HttpServlet {
         double rate = Double.parseDouble(request.getParameter("rate"));
         int id= Integer.parseInt(request.getParameter("id"));
         Rate.insert(id,rate);
-        double avgRate=0;
-        avgRate = Rate.getRate(id);
+        double avgRate = Rate.getRate(id);
         ArrayList<Product> products = ProductDataBase.select();
         for (Object var:products) {
             System.out.println(var);
         }
-
-        String nameCategory= request.getParameter("categoryName");
-        ArrayList<Product> category = ProductDataBase.findByCategory(nameCategory);
-
+        ArrayList<Category> category = CategoryDataBase.select();
+        ProductDataBase.updateRating(id, avgRate);
         request.setAttribute("categories", category);
-        request.setAttribute("rating", avgRate);
         request.setAttribute("products", products);
         getServletContext().getRequestDispatcher("/user.jsp").forward(request, response);
     }

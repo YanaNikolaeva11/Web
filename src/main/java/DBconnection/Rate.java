@@ -25,21 +25,25 @@ public class Rate {
     }
 
     public static double getRate(int id) {
-        double rate = 0;
-        try {
+        double avg=0;
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-            ;
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT AVG (rating) FROM rating where idProduct=?");
-                while (resultSet.next()) {
-                    rate = resultSet.getDouble(1);
+            try (Connection conn = DriverManager.getConnection(url, username, password)){
+                String sql = "SELECT AVG (rating) FROM rating WHERE idProduct=?";
+                try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+                    preparedStatement.setInt(1, id);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    if(resultSet.next()){
+                        avg = resultSet.getDouble(1);
+
+                    }
                 }
             }
-        } catch (Exception ex) {
+        }
+        catch(Exception ex){
             System.out.println(ex);
         }
-        return rate;
+        return avg;
     }
 
 
