@@ -1,3 +1,4 @@
+import DBconnection.BasketDataBase;
 import DBconnection.CategoryDataBase;
 import DBconnection.ProductDataBase;
 import Data.Category;
@@ -23,6 +24,9 @@ public class UserServlet extends HttpServlet {
             System.out.println(var);
         }
         ArrayList<Category> categories = CategoryDataBase.select();
+        ArrayList<Product> basket = BasketDataBase.select();
+        int size = basket.size();
+        request.setAttribute("count", size);
         request.setAttribute("products", products);
         request.setAttribute("categories",categories);
 

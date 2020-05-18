@@ -23,7 +23,8 @@ public class BasketServlet extends HttpServlet {
 
         BasketDataBase.insert(ProductDataBase.selectOne(Integer.parseInt(idProduct)));
         ArrayList<Product> basket = BasketDataBase.select();
-        request.setAttribute("count", basket.size());
+        int size = basket.size();
+        request.setAttribute("count", size);
 
         String path = request.getContextPath() +"/user";
         response.sendRedirect(path);

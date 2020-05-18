@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 @WebServlet("/rate")
@@ -19,6 +21,8 @@ public class RateServlet extends HttpServlet {
         int id= Integer.parseInt(request.getParameter("id"));
         Rate.insert(id,rate);
         double avgRate = Rate.getRate(id);
+
+        avgRate = new BigDecimal(avgRate).setScale(3, RoundingMode.HALF_UP).doubleValue();
         ArrayList<Product> products = ProductDataBase.select();
         for (Object var:products) {
             System.out.println(var);
