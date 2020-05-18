@@ -122,9 +122,14 @@
                                     <button type="submit" class="btn btn-outline-danger" name="deleteID">Delete</button>
                                 </form>
                                 <%--<form><button type="button" class="btn btn-outline-success">Plus</button></form>--%>
-                                <form name="priceEdit" action='<c:url value="/multy" />' method="get">
+                               <%-- <form name="priceEdit" action='<c:url value="/multy" />' method="get">
                                     <span class="minus">-</span><input type="text" value="1" size="15" name="count"/><span class="plus">+</span>
-                                </form>
+                                </form>--%>
+
+                                    <form method="get" action='<c:url value="/multy" />'>
+                                        <input type="hidden" name="ID" value="${product.idProduct}">
+                                        <input placeholder="Count: " type="text" name="count"> <input type="submit" value="OK">
+                                    </form>
                             </div>
                         </li>
                     </ul>

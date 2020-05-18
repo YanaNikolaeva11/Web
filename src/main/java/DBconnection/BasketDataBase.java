@@ -62,11 +62,12 @@ public class BasketDataBase {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
-                String sql = "INSERT INTO basket (id, productName, price) Values (?, ?, ?)";
+                String sql = "INSERT INTO basket (id, productName, price, finPrice) Values (?, ?, ?, ?)";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setInt(1, product.getIdProduct());
                     preparedStatement.setString(2, product.getName());
                     preparedStatement.setInt(3, product.getPrice());
+                    preparedStatement.setInt(4, product.getPrice());
                     return  preparedStatement.executeUpdate();
                 }
             }
@@ -103,7 +104,7 @@ public class BasketDataBase {
             ;
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT SUM(price) FROM basket");
+                ResultSet resultSet = statement.executeQuery("SELECT SUM(finPrice) FROM basket");
                 while (resultSet.next()) {
                     sum = resultSet.getInt(1);
                     ;
@@ -119,7 +120,7 @@ public class BasketDataBase {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)){
-                String sql = "update basket SET price=productPrice*? where id=?;";
+                String sql = "update basket SET finPrice=price*? where id=?;";
                 try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
                     preparedStatement.setInt(1, count);
                     preparedStatement.setInt(2, id);
